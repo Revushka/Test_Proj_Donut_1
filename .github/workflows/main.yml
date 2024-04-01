@@ -13,25 +13,22 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       
-    - name: Setup .NET 5.0
+    - name: Setup .NET  5.0
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '5.0'
 
     - name: Build and run conversion script
-      run: |
-        dotnet run -p Test_Proj_Donut_1.csproj ${{ github.workspace }}/index.cshtml ${{ github.workspace }}
+      run: dotnet run -p /home/runner/work/Test_Proj_Donut_1/Test_Proj_Donut_1/FroGitProj/FroGitProj.csproj ${{ github.workspace }}/index.cshtml ${{ github.workspace }}
 
     - name: Add index.html to git
-      run: |
-        echo "<!DOCTYPE html><html><body>Test</body></html>" > ${{ github.workspace }}/index.html
-        git add index.html
+      run: git add index.html
 
     - name: Commit changes
       run: |
         git config --global user.email "tmaksim187@gmail.com"
         git config --global user.name "GitHub Actions"
-        git commit -m "Add converted HTML file" index.html
+        git commit -m "Add converted HTML file"
 
     - name: Push changes
       uses: ad-m/github-push-action@master
