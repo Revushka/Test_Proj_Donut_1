@@ -19,7 +19,7 @@ jobs:
         dotnet-version: '5.0'
 
     - name: Build and run conversion script
-      run: dotnet run -p /home/runner/work/Test_Proj_Donut_1/Test_Proj_Donut_1/FroGitProj/FroGitProj.csproj ${{ github.workspace }}/index.cshtml ${{ github.workspace }}
+      run: dotnet run -p /home/runner/work/Test_Proj_Donut_1/FroGitProj/FroGitProj.csproj ${{ github.workspace }}/index.cshtml ${{ github.workspace }}
 
     - name: Add index.html to git
       run: git add index.html
