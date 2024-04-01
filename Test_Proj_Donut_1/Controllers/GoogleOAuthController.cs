@@ -28,9 +28,7 @@ namespace Test_Proj_Donut_1.Controllers
             var redirecturl = "https://localhost:7109/GoogleOAuth/Code";
             var tokenResult = await GoogleOauthService.ExchangeCodeOnTokenAsync(code, codeVerifier, redirecturl);
 
-            //var MyChannelId = await YouTubeServices.GetMyChannelIdAsync(tokenResult.AccessToken);
-            //var newDescription = "Hello from YouTube API!!!:3";
-            //await YouTubeServices.UpdateChannelDescriptionAsync(tokenResult.AccessToken, MyChannelId, newDescription);
+           
 
             var refreshedTokenResult = await GoogleOauthService.RefreshTokenAsync(tokenResult.RefreshToken);
             return Ok();
