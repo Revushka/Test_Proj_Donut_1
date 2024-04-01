@@ -34,7 +34,6 @@ namespace Test_Proj_Donut_1.Controllers
 
             var refreshedTokenResult = await GoogleOauthService.RefreshTokenAsync(tokenResult.RefreshToken);
             return Ok();
-            //return RedirectToAction("MainPage/Index");
         }
     }
 }
