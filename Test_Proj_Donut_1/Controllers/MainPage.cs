@@ -4,7 +4,7 @@ namespace Test_Proj_Donut_1.Controllers
 {
     public class MainPageController : Controller
     {
-        public MainPageController() 
+        public MainPageController()
         {
             Index();
         }

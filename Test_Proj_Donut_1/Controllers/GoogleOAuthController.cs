@@ -9,7 +9,7 @@ namespace Test_Proj_Donut_1.Controllers
     public class GoogleOAuthController : Controller
     {
         public IActionResult RedirectOnOAuthServer()
-        { 
+        {
             var scope = "https://www.googleapis.com/auth/youtube";
             var redirecturl = "https://localhost:7109/GoogleOAuth/Code";
             var codeVerifier = Guid.NewGuid().ToString();
