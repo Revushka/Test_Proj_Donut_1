@@ -18,8 +18,11 @@ jobs:
       with:
         dotnet-version: '5.0'
 
+    - name: Debug message
+      run: echo "This is a debug message"
+    
     - name: Build and run conversion script
-      run: dotnet run -p /home/runner/work/Test_Proj_Donut_1/Test_Proj_Donut_1/Test_Proj_Donut_1/Test_Proj_Donut_1/Test_Proj_Donut_1.csproj ${{ github.workspace }}/index.cshtml ${{ github.workspace }}
+      run: dotnet run -p /home/runner/work/Test_Proj_Donut_1/FroGitProj/FroGitProj.csproj ${{ github.workspace }}/index.cshtml ${{ github.workspace }}
 
     - name: Add index.html to git
       run: git add index.html
