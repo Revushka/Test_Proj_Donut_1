@@ -28,8 +28,6 @@ namespace Test_Proj_Donut_1.Controllers
             var redirecturl = "https://localhost:7109/GoogleOAuth/Code";
             var tokenResult = await GoogleOauthService.ExchangeCodeOnTokenAsync(code, codeVerifier, redirecturl);
 
-           
-
             var refreshedTokenResult = await GoogleOauthService.RefreshTokenAsync(tokenResult.RefreshToken);
             return Ok();
         }
